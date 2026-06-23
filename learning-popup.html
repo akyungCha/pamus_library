@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>학습하기 — 이 책도 재밌어요!</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poor+Story&display=swap">
+  <link rel="stylesheet" href="resource/css/style_pop.css">
+</head>
+<body>
+
+<div class="card">
+
+  <!-- Header -->
+  <div class="header">
+    <img src="resource/imgs/logo.png" alt="Library" class="header-logo">
+    <span class="header-title">Macro’s New Friend</span>
+    <button class="close-btn" onclick="window.close()">✕</button>
+  </div>
+
+  <!-- Book info -->
+  <div class="book-info-section">
+    <img src="resource/imgs/thumb.png" alt="Book Cover" class="book-cover">
+    <div class="book-meta">
+      <table class="meta-table">
+        <tr>
+          <td class="meta-label">저 자</td>
+          <td class="meta-value">Elizabeth Kernan</td>
+        </tr>
+        <tr>
+          <td class="meta-label">장 르</td>
+          <td class="meta-value">FICTION</td>
+        </tr>
+        <tr>
+          <td class="meta-label">출판사</td>
+          <td class="meta-value">The Rosen Publishing Group, Inc</td>
+        </tr>
+        <tr>
+          <td class="meta-label">Lexile</td>
+          <td class="meta-value">350L</td>
+        </tr>
+        <tr>
+          <td class="meta-label">줄거리</td>
+          <td class="meta-value synopsis">Patty is a talented photographer who loves to take pictures of her world.
+            Readers get to see pictures of her gouse, 
+            school, park, store, bicycle, family members, and cute dog.</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- Learning progress -->
+  <div class="progress-section">
+
+    <div class="track-row">
+      <div class="cony-col">
+        <div class="speech-bubble">코니와 함께 길을 따라, 학습을 순서대로 진행하세요.</div>
+        <img src="resource/imgs/book_cony.png" alt="Cony" class="cony-img">
+      </div>
+      <div class="track-wrapper">
+        <div class="track-line-bg">
+          <div class="track-fill" id="trackFill"></div>
+        </div>
+        <div class="track-container" id="trackContainer"></div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script src="resource/js/popup.js"></script>
+</body>
+</html>

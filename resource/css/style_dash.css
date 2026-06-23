@@ -1,0 +1,1245 @@
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Pretendard', 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif;
+  background-color: #fdfaee;
+  color: #1a1a1a;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+
+a      { text-decoration: none; color: inherit; }
+img    { display: block; }
+button { font-family: inherit; cursor: pointer; }
+
+/* ============================================================
+   상단 헤더
+   ============================================================ */
+.header {
+  background-color: #045235;
+  height: 58px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-left:  max(28px, calc((100% - 880px) / 2));
+  padding-right: max(28px, calc((100% - 880px) / 2));
+  position: sticky;
+  top: 0;
+  z-index: 200;
+}
+
+.header-left .logo {
+  height: 45px;
+  width: auto;
+  object-fit: contain;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.username {
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.icon-btn {
+  background: none;
+  border: none;
+  padding: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.icon-btn img {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+
+}
+
+/* ============================================================
+   본문 영역
+   ============================================================ */
+.page-main {
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 24px 24px 48px;
+}
+
+/* ============================================================
+   메뉴 탭
+   ============================================================ */
+.tabs-row {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.tabs-pill {
+  display: inline-flex;
+  background: #ffffff;
+  border-radius: 40px;
+  border: 0.5px solid #c7c7c7;
+  padding: 4px;
+  gap: 2px;
+}
+
+.tab-btn {
+  padding: 5px 28px;
+  border: none;
+  border-radius: 40px;
+  background: transparent;
+  color: #777777;
+  font-size: 14px;
+  font-weight: 500;
+  transition: background 0.2s, color 0.2s;
+  white-space: nowrap;
+}
+
+/* 활성 탭(My book) */
+.tab-btn.active {
+  background: #152244;
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.tab-btn:not(.active):hover {
+  background: rgba(0, 0, 0, 0.06);
+}
+
+/* ============================================================
+   카드 공통 스타일
+   ============================================================ */
+.card {
+  background: #ffffff;
+  border-radius: 15px;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.25);
+  padding: 28px;
+  margin-bottom: 16px;
+}
+
+/* ============================================================
+   통계 카드 (독서 현황)
+   ============================================================ */
+.stats-card-wrap {
+  border-radius: 20px;
+  background: linear-gradient(94deg, rgba(222, 223, 252, 0.50) 1.51%, rgba(157, 225, 204, 0.50) 99.01%);
+  box-shadow: -2px -2px 2px 0 rgba(0, 0, 0, 0.25) inset;
+  padding: 5px;
+  margin-bottom: 16px;
+}
+
+.stats-card {
+  display: flex;
+  align-items: center;
+  gap: 36px;
+  border-radius: 20px;
+  box-shadow: none;
+  margin-bottom: 0;
+}
+
+.donut-wrap {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.donut-svg {
+  width: 164px;
+  height: 164px;
+}
+
+.donut-track {
+  fill: none;
+  stroke: #d4ede8;
+  stroke-width: 22;
+}
+
+.donut-arc {
+  fill: none;
+  stroke: url(#donutGradient);
+  stroke-width: 13;
+  stroke-linecap: round;
+  stroke-dasharray: 440;
+  stroke-dashoffset: 0;
+  transform: rotate(-90deg);
+  transform-origin: 82px 82px;
+}
+
+.donut-text {
+  font-size: 30px;
+  font-weight: 800;
+  fill: #045235;
+  text-anchor: middle;
+  dominant-baseline: central;
+  letter-spacing: -0.5px;
+  font-family: inherit;
+}
+
+/* ── 중앙 통계 영역 ── */
+.center-stats {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+/* 목표 초과 배지 */
+.goal-badge {
+  display: inline-block;
+  background:  linear-gradient(98deg, #2DD4BF 6.56%, #11A396 93.39%);
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 700;
+  padding: 8px 15px;
+  border-radius: 20px;
+  letter-spacing: -0.01em;
+}
+
+.book-count-row {
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+  line-height: 1;
+  margin-top: -10px;
+}
+
+/* 읽은 도서수*/
+.count-big {
+  font-size: 80px;
+  font-weight: 900;
+  color: #2B3D51;
+  line-height: normal;
+  letter-spacing: -0.03em;
+  
+}
+
+.count-unit {
+  font-size: 21px;
+  font-weight: 700;
+  color: #777777;
+}
+
+.last-month-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.lm-icon-box {
+  width: 46px;
+  height: 46px;
+  border-radius: 12px;
+  background: #439FF0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.inline-icon {
+  width: 26px;
+  height: 26px;
+  object-fit: contain;
+}
+
+.lm-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  cursor: pointer;
+}
+
+.lm-num {
+  font-size: 17px;
+  font-weight: 800;
+  color: #439FF0;
+  line-height: 1.5;
+}
+
+.lm-link {
+  font-size: 12px;
+  font-weight: 500;
+  color: #2B3D51;
+  line-height: 1.3;
+  width: fit-content;
+}
+
+.lm-link:hover {
+  color: #000907;
+  
+}
+
+/* ── 우측 미니 카드 영역 ── */
+.right-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-width: 256px;
+}
+
+.mini-card {
+  width: 367px;       
+  height: 97px;        
+  box-sizing: border-box; 
+  border-radius: 20px;
+  padding: 14px 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.25);
+}
+
+.green-mini  { background: linear-gradient(
+  94deg,
+  rgba(222, 223, 252, 0.50) 1.51%,
+  rgba(157, 225, 204, 0.50) 99.01%
+);}
+.yellow-mini {
+  background: linear-gradient(93deg, #FFDF00 -13.48%, #F9BF28 100%);
+  cursor: pointer;
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+
+.yellow-mini:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.18);
+}
+
+.yellow-mini:hover .arrow-circle img {
+  transform: scale(1.1);
+}
+
+.mini-icon {
+  width: 70px;
+  height: 70px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.mini-text {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.green-mini .mini-text {
+  flex-direction: row;
+  align-items: baseline;
+  gap: 6px;
+}
+
+.mini-label 
+{ font-size: 15px; 
+  color: #2B3D51; 
+  font-weight: 500; 
+}
+.mini-val   {
+  font-size: 35px; font-weight: 800; color: #2B3D51;
+  letter-spacing: -0.02em; line-height: 1.1; }
+
+.mini-sub  { 
+  font-size: 15px; 
+  color: #2B3D51;
+  font-weight: 500;
+  line-height: 1.3;
+}
+
+.mini-main { 
+  font-size: 22px; 
+  font-weight: 800; 
+  color: #2B3D51;
+  letter-spacing: -0.01em; }
+
+/* 노란 카드 오른쪽 버튼 */
+.arrow-circle {
+  width: 34px;
+  height: 34px;
+  background: none;
+  border: none;
+  padding: 0;
+  flex-shrink: 0;
+
+}
+
+.arrow-circle img {
+  width: 34px;
+  height: 34px;
+  object-fit: contain;
+  transition: transform 0.15s;
+}
+
+/* ============================================================
+   도서 추천 카드
+   ============================================================ */
+/* 상단에 "도서 더보기" 링크 공간 확보 */
+.books-card {
+  position: relative;
+  padding-top: 36px;
+}
+
+.books-more {
+  position: absolute;
+  top: 20px;
+  right: 24px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  cursor: pointer;
+  opacity: 0.7;
+  transition: opacity 0.15s;
+}
+
+.books-more:hover { opacity: 1; }
+
+.more-text { font-size: 13px; color: #777777; font-weight: 500; }
+.more-icon { width: 18px; height: 18px; object-fit: contain; opacity: 0.6; }
+
+/* 2열 그리드 */
+.books-grid {
+  display: flex;
+  gap: 28px;
+}
+
+.book-col {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  min-width: 0;
+}
+
+/* 도서 종류 배지 */
+.book-badge {
+  display: inline-block;
+  padding: 4px 14px;
+  border-radius: 5px;
+  font-size: 15px;
+  font-weight: 700;
+  color: #ffffff;
+  width: fit-content;
+  letter-spacing: -0.01em;
+}
+
+.blue-badge { background: #344ED7; } /* 필수 도서 */
+.teal-badge { background: #16AB9D; } /* 추천 도서 */
+
+.book-row {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+}
+
+.book-thumb {
+  width: auto;
+  height: auto;
+  max-width: 140px;
+  max-height: 145px;
+  border-radius: 8px;
+  flex-shrink: 0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+}
+
+.book-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 0;
+}
+
+.book-title {
+  font-size: 20px;
+  font-weight: 800;
+  color: #2B3D51;
+  letter-spacing: -0.02em;
+  line-height: 1.3;
+}
+
+.book-desc {
+  font-size: 12px;
+  color: #2B3D51;
+  line-height: 20px;
+  /* 최대 3줄 표시 후 말줄임 */
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* 학습하기 버튼 */
+.learn-btn {
+  padding: 8px 22px;
+  border: 1.5px solid #d0d0d0;
+  border-radius: 5px;
+  background: rgba(196, 197, 198, 0.40);
+  font-size: 13px;
+  color: #2B3D51;
+  font-weight: 600;
+  width: fit-content;
+  margin-top: 4px;
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
+}
+
+.learn-btn:hover {
+  filter: brightness(0.88);
+}
+
+/* ============================================================
+   캐러셀 섹션 (놓친 도서 모아보기)
+   ============================================================ */
+.carousel-section {
+  display: flex;
+  align-items: stretch;
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.07);
+  overflow: hidden;
+  min-height: 120px;
+}
+
+/* 왼쪽 패널 */
+.carousel-promo {
+  background: #FFF4CB;
+  padding: 28px;
+  min-width: 240px;
+  max-width: 120px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.promo-sub {
+  font-size: 15px;
+  color: #2B3D51;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+.promo-title {
+  font-size: 20px;
+  font-weight: 800;
+  color: #2B3D51;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+/* 캐러셀 우측 전체 영역 */
+.carousel-body {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  padding: 20px 12px;
+  gap: 8px;
+  overflow: hidden;
+  min-width: 0;
+}
+
+/* 이전 다음 화살표 버튼 */
+.c-arrow {
+  flex-shrink: 0;
+  background: none;
+  border: none;
+  padding: 0;
+  transition: opacity 0.2s, transform 0.15s;
+}
+
+.c-arrow img {
+  width: 34px;
+  height: 34px;
+  object-fit: contain;
+}
+
+.c-arrow:hover {
+  transform: scale(1.1);
+}
+
+/* 카드 뷰포트: 넘치는 부분 숨김 */
+.c-viewport {
+  flex: 1;
+  overflow: hidden;
+  min-width: 0;
+  /* 가로 스와이프 시 세로 스크롤 방해 방지 */
+  touch-action: pan-y;
+}
+
+/* 슬라이드 트랙: JS의 transform으로 이동
+   드래그 중에는 JS가 transition을 'none'으로 일시 덮어씀 */
+.c-track {
+  display: flex;
+  gap: 14px;
+  transition: transform 0.3s ease;
+  will-change: transform;
+}
+
+/* 개별 도서 카드 */
+.c-card {
+  flex-shrink: 0;
+  width: 200px;
+  display: grid;
+  grid-template-columns: 68px 1fr;
+  grid-template-rows: auto auto;
+  column-gap: 10px;
+  row-gap: 0;
+  align-items: center;
+}
+
+.c-thumb {
+  width: 68px;
+  height: 68px;
+  object-fit: cover;
+  border-radius: 8px;
+  grid-row: 1 / 3;
+  align-self: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.c-meta {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  align-self: end;
+  padding-bottom: 2px;
+}
+
+/* 캐러셀 배지 */
+.c-badge {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 5px;
+  font-size: 12.5px;
+  font-weight: 500;
+  color: #ffffff;
+  white-space: nowrap;
+}
+
+.req-badge { background: #344ED7; } /* 필독서 */
+.rec-badge { background: #16AB9D} /* 추천 도서 */
+
+.c-month {
+  font-size: 13px;
+  color: #777777;
+  font-weight: 500;
+}
+
+.c-title {
+  font-size: 15px;
+  font-weight: 600;
+  color: #1a1a1a;
+  align-self: start;
+  padding-top: 2px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  letter-spacing: -0.01em;
+}
+
+/* ============================================================
+   반응형 — 태블릿 가로 (768px ~ 1279px)
+   레이아웃 유지, 크기와 간격만 조정
+   ============================================================ */
+@media (max-width: 1279px) {
+
+  .page-main {
+    padding: 20px 20px 40px;
+  }
+
+  /* 통계 카드: 항목 간 간격 축소 */
+  .stats-card {
+    gap: 24px;
+  }
+
+  /* 도넛 크기 축소 */
+  .donut-svg {
+    width: 144px;
+    height: 144px;
+  }
+
+  /* 권수 숫자 축소 */
+  .count-big  { font-size: 52px; }
+  .count-unit { font-size: 17px; }
+
+  /* 우측 미니 카드 */
+  .right-cards  { min-width: 230px; }
+  .mini-val     { font-size: 22px; }
+  .mini-main    { font-size: 13px; }
+
+  /* 도서 추천 섹션 */
+  .book-thumb {
+    width: 90px;
+    height: 114px;
+  }
+
+  .book-title { font-size: 15px; }
+  .book-desc  { font-size: 12px; }
+
+  /* 캐러셀 홍보 패널 */
+  .carousel-promo {
+    min-width: 185px;
+    max-width: 185px;
+    padding: 22px 20px;
+  }
+
+  .promo-title { font-size: 18px; }
+
+  /* 캐러셀 카드 */
+  .c-card  { width: 170px; }
+  .c-thumb { width: 56px; height: 56px; }
+}
+
+/* ============================================================
+   반응형 — 모바일 (767px 이하)
+   세로 단일 컬럼 레이아웃으로 전환
+   ============================================================ */
+@media (max-width: 767px) {
+
+  /* 헤더 */
+  .header {
+    padding: 0 16px;
+    height: 52px;
+  }
+
+  .header-left .logo { height: 30px; }
+  .icon-btn img      { width: 22px; height: 22px; }
+  .username          { font-size: 13px; }
+
+  /* 페이지 여백 축소 */
+  .page-main {
+    padding: 16px 14px 36px;
+  }
+
+  /* 탭: 글자·패딩 축소 */
+  .tab-btn {
+    padding: 8px 16px;
+    font-size: 13px;
+  }
+
+  /* ── 통계 카드: flex 방향을 세로로 변경 ── */
+  .stats-card {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 22px 18px;
+  }
+
+  /* 중앙 통계: 가운데 정렬 */
+  .center-stats {
+    align-items: center;
+    text-align: center;
+    width: 100%;
+  }
+
+  .book-count-row { justify-content: center; }
+  .last-month-row { justify-content: center; }
+
+  .count-big { font-size: 56px; }
+
+  /* 우측 미니 카드: 가로 전체 너비로 확장 */
+  .right-cards {
+    width: 100%;
+    min-width: unset;
+  }
+
+  .mini-card {
+    width: 100%;
+  }
+
+  /* ── 도서 추천 카드: 단일 컬럼 ── */
+  .books-card {
+    padding-top: 44px;
+  }
+
+  .books-grid {
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .book-thumb {
+    width: 90px;
+    height: 114px;
+  }
+
+  /* ── 캐러셀 배지 숨김 ── */
+  .c-badge.rec-badge,
+  .c-badge.req-badge {
+    display: none;
+  }
+
+  /* ── 캐러셀 섹션: 홍보 패널을 상단에 배치 ── */
+  .carousel-section {
+    flex-direction: column;
+  }
+
+  .carousel-promo {
+    min-width: unset;
+    max-width: unset;
+    width: 100%;
+    padding: 20px 18px 16px;
+  }
+
+  .promo-title { font-size: 18px; }
+
+  .carousel-body {
+    padding: 14px 8px 18px;
+  }
+
+  /* 캐러셀 카드: 모바일 크기 */
+  .c-card  { width: 150px; }
+  .c-thumb { width: 50px; height: 50px; }
+
+  /* 리그 랭킹: 모바일에서 학원명·닉네임 숨김 */
+  .rank-campus,
+  .rank-name,
+  .lb-campus {
+    display: none;
+  }
+}
+
+/* ============================================================
+   명예의 전당 모달
+   ============================================================ */
+.modal-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(5px);
+  z-index: 500;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-overlay.open { display: flex; }
+
+.modal-box {
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 28px;
+  width: 700px;
+  max-width: calc(100vw - 40px);
+  max-height: calc(100vh - 60px);
+  overflow-y: auto;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
+}
+
+/* 모달 헤더 */
+.modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.modal-title-area {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.modal-trophy-icon {
+  width: 42px;
+  height: 42px;
+  object-fit: contain;
+}
+
+.modal-title-text {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.modal-subtitle {
+  font-size: 12px;
+  color: #2B3D51;
+  line-height: 1.5;
+  font-weight: 500;
+}
+
+.modal-title {
+  font-size: 18px;
+  font-weight: 800;
+  color: #2B3D51;
+  letter-spacing: -0.02em;
+}
+
+.modal-close {
+  background: none;
+  border: none;
+  font-size: 26px;
+  color: #aaa;
+  line-height: 1;
+  padding: 2px 6px;
+  transition: color 0.15s;
+}
+
+.modal-close:hover { color: #1a1a1a; }
+
+/* 두 섹션 */
+.modal-sections {
+  display: flex;
+  gap: 18px;
+}
+
+.league-section { flex: 1; min-width: 0; }
+
+.section-label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  font-weight: 700;
+  color: #2B3D51;
+  margin-bottom: 8px;
+}
+
+.section-icon {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+}
+
+/* 나의 순위 배너 */
+.my-rank-banner {
+  border-radius: 12px;
+  padding: 11px 14px;
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  min-height: 72px;
+  
+}
+
+.blue-banner { 
+background: #344ED7; 
+box-shadow: 0.88px 0.88px 4.4px 0 #344ED7;
+}
+.teal-banner { 
+  background: #11A396; 
+  box-shadow: 0.88px 0.88px 4.4px 0 var(--SUB, #20B1A0);
+}
+
+.rank-left {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 8px;
+}
+
+.rank-badge-box {
+  
+  background: rgba(255, 255, 255, 0.28);
+  border-radius: 8px;
+  padding: 4px 10px;
+  font-size: 17px;
+  font-weight: 900;
+  color: #ffffff;
+  letter-spacing: -0.02em;
+}
+
+.rank-pill {
+  background: #ef4444;
+  border-radius: 5px;
+  padding: 2px 8px;
+  font-size: 11px;
+  font-weight: 700;
+  color: #ffffff;
+  white-space: nowrap;
+}
+
+.rank-name {
+  font-size: 14px;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+
+.rank-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 1px;
+}
+
+.rank-books {
+  display: flex;
+  align-items: baseline;
+  gap: 2px;
+}
+
+.rank-num {
+  font-size: 22px;
+  font-weight: 900;
+  color: #ffffff;
+  letter-spacing: -0.02em;
+}
+
+.rank-unit {
+  font-size: 12px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.rank-campus {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+/* 리더보드 */
+.leaderboard {
+  background: #f6f7fb;
+  border-radius: 8.8px;
+  border: 0.88px solid rgba(0, 0, 0, 0.10);
+  overflow: hidden;
+}
+
+.lb-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 9px 14px;
+}
+
+.lb-row + .lb-row { border-top: 1px solid #eeeff3; }
+
+.lb-row-me { background: #eef6ff; }
+
+.lb-rank {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.rank-1 { background: #FFDC7A; }
+.lb-trophy { width: 26px; height: 26px; object-fit: contain; }
+
+.rank-2 { background: #C4C5C6; color: #2B3D51; }
+.rank-3 { background: #FFC89D; color: #AA5E43; }
+.rank-n { background: #ffffff; color: #666; }
+
+.lb-info {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 6px;
+  min-width: 0;
+}
+
+.lb-name {
+  font-size: 13px;
+  font-weight: 700;
+  color: #1a1a1a;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.me-tag {
+  background: #344ED7;
+  color: #fff;
+  font-size: 10px;
+  font-weight: 700;
+  padding: 1px 6px;
+  border-radius: 10px;
+}
+
+.lb-campus {
+  font-size: 11px;
+  color: #999;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.lb-count {
+  display: flex;
+  align-items: baseline;
+  gap: 1px;
+  flex-shrink: 0;
+}
+
+.lb-num {
+  font-size: 16px;
+  font-weight: 800;
+  color: #1a1a1a;
+  letter-spacing: -0.02em;
+}
+
+.lb-unit {
+  font-size: 11px;
+  color: #888;
+}
+
+/* ============================================================
+   지난달 도서 모달
+   ============================================================ */
+.lm-modal-box {
+  width: 100%;
+  max-width: 560px;
+  max-height: 82vh;
+  overflow-y: auto;
+  border-radius: 20px;
+  background: #fff;
+  padding: 24px;
+}
+
+.lm-modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 22px;
+}
+
+.lm-modal-title-area {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.lm-modal-icon-box {
+  width: 44px;
+  height: 44px;
+  background: #439FF0;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.lm-modal-icon-img {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+}
+
+.lm-modal-title {
+  font-size: 17px;
+  font-weight: 800;
+  color: #1a1a1a;
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.lm-modal-count {
+  font-size: 13px;
+  font-weight: 500;
+  color: #aaa;
+}
+
+.lm-modal-close {
+  background: none;
+  border: none;
+  font-size: 30px;
+  color: #ff5252;
+  line-height: 1;
+  padding: 2px 6px;
+  transition: color 0.15s;
+}
+
+.lm-modal-close:hover { color: #1a1a1a; }
+
+
+.lm-modal-content {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.lm-section-head {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.lm-section-badge {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 5px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.lm-teal-badge  { background: #344ED7; color: #fff; }
+.lm-green-badge { background: #16AB9D; color: #fff; }
+
+.lm-section-count {
+  font-size: 13px;
+  color: #bbb;
+  font-weight: 500;
+}
+
+.lm-books-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+.lm-book-card {
+  border-radius: 10px;
+  border: 1px solid #ebebeb;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.07);
+  overflow: hidden;
+  background: #fff;
+}
+
+.lm-book-cover {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  background: #f0f0f0;
+  overflow: hidden;
+}
+
+.lm-book-cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.lm-book-info {
+  padding: 8px 8px 10px;
+}
+
+.lm-book-title {
+  font-size: 11px;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 3px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.lm-book-sub {
+  font-size: 10px;
+  color: #aaa;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

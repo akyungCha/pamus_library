@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>파머스영어 라이브러리</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css">
+  <link rel="stylesheet" href="resource/css/style_dash.css">
+</head>
+<body>
+
+  <!-- ── 헤더 ── -->
+  <header class="header">
+    <div class="header-left">
+      <img src="resource/imgs/logo.png" alt="Library" class="logo">
+    </div>
+    <div class="header-right">
+      <span class="username">서코니</span>
+      <button class="icon-btn" aria-label="사용자">
+        <img src="resource/imgs/person.png" alt="">
+      </button>
+      <button class="icon-btn" aria-label="로그아웃">
+        <img src="resource/imgs/power.png" alt="">
+      </button>
+    </div>
+  </header>
+
+  <!-- ── 페이지 본문 ── -->
+  <main class="page-main">
+
+    <!-- 탭 내비게이션 -->
+    <nav class="tabs-row" aria-label="메뉴">
+      <div class="tabs-pill">
+        <button class="tab-btn active" data-tab="mybook">My Book</button>
+        <button class="tab-btn" data-tab="booklist">도서 목록</button>
+        <button class="tab-btn" data-tab="readbooks">읽은 도서</button>
+      </div>
+    </nav>
+
+    <!-- ── 통계 카드 ── -->
+    <div class="stats-card-wrap">
+    <section class="stats-card card" aria-label="독서 현황">
+
+      <!-- 도넛 차트  -->
+      <div class="donut-wrap">
+        <svg class="donut-svg" viewBox="0 0 164 164" xmlns="http://www.w3.org/2000/svg" aria-label="독서 달성률 100%">
+          <defs>
+            <linearGradient id="donutGradient" x1="0" y1="0" x2="164" y2="164" gradientUnits="userSpaceOnUse">
+              <stop offset="0%" stop-color="#2dc4a0"/>
+              <stop offset="100%" stop-color="#1a7abf"/>
+            </linearGradient>
+          </defs>
+          <circle class="donut-track" cx="82" cy="82" r="70"/>
+          <circle class="donut-arc" cx="82" cy="82" r="70"/>
+          <text class="donut-text" x="82" y="82">100%</text>
+        </svg>
+      </div>
+
+      <!-- 중앙 통계 영역 -->
+      <div class="center-stats">
+        <span class="goal-badge">목표 초과!</span>
+        <div class="book-count-row">
+          <span class="count-big">11</span>
+          <span class="count-unit">/8권</span>
+        </div>
+        <div class="last-month-row">
+          <div class="lm-icon-box">
+            <img src="resource/imgs/book.png" alt="" class="inline-icon">
+          </div>
+          <div class="lm-text">
+            <span class="lm-num">8권</span>
+            <a href="#" class="lm-link">지난달 도서 확인</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 우측 정보 카드 -->
+      <div class="right-cards">
+        <div class="mini-card green-mini">
+          <img src="resource/imgs/real book.png" alt="" class="mini-icon">
+          <div class="mini-text">
+            <span class="mini-label">나의 누적 독서량</span>
+            <span class="mini-val">128권</span>
+          </div>
+        </div>
+        <a href="#" class="mini-card yellow-mini">
+          <img src="resource/imgs/king.png" alt="" class="mini-icon">
+          <div class="mini-text">
+            <span class="mini-sub">명예의 전당</span>
+            <span class="mini-main">독서왕 리그 확인하기</span>
+          </div>
+          <span class="arrow-circle" aria-hidden="true">
+            <img src="resource/imgs/circle_right.png" alt="">
+          </span>
+        </a>
+      </div>
+
+    </section>
+    </div>
+
+    <!-- ── 도서 추천 카드 ── -->
+    <section class="books-card card" aria-label="도서 추천">
+      <div class="books-more">
+        <span class="more-text">도서 더보기</span>
+        <img src="resource/imgs/add_circle.png" alt="더보기" class="more-icon">
+      </div>
+      <div class="books-grid">
+
+        <!-- 필수 도서 -->
+        <div class="book-col">
+          <span class="book-badge blue-badge">필수 도서</span>
+          <div class="book-row">
+            <img src="resource/imgs/thumb.png" alt="I Know Numbers" class="book-thumb">
+            <div class="book-info">
+              <h3 class="book-title">이번 주 꼭 읽어요!</h3>
+              <p class="book-desc">태양의 화가 빈센트 반 고흐가 동생 테오에게 보낸 편지를 엮은 책이에요. 예술에 대한 열정과 삶의 고뇌를 생생하게</p>
+              <button class="learn-btn" onclick="window.open('learning-popup.html', '_blank', 'width=860,height=700')">학습하기</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 추천 도서 -->
+        <div class="book-col">
+          <span class="book-badge teal-badge">추천 도서</span>
+          <div class="book-row">
+            <img src="resource/imgs/thumb2.png" alt="My Pets" class="book-thumb">
+            <div class="book-info">
+              <h3 class="book-title">이 책도 재밌어요!</h3>
+              <p class="book-desc">발랄하게 사랑한 사계절 간의 아름다운 계절을 알아봐요. 함께 즐거워하는 친구들에게 아름다운 사계절을 알아봐요.</p>
+              <button class="learn-btn" onclick="window.open('learning-popup.html','learning','width=860,height=720,scrollbars=yes,resizable=yes')">학습하기</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ── 캐러셀 섹션 ── -->
+    <section class="carousel-section" aria-label="놓친 도서">
+
+      <div class="carousel-promo">
+        <p class="promo-sub">언제든 다시 읽고 목표를 향해!</p>
+        <h2 class="promo-title">놓친 도서 모아보기</h2>
+      </div>
+
+      <div class="carousel-body">
+        <button class="c-arrow" id="prevBtn" aria-label="이전">
+          <img src="resource/imgs/before.png" alt="">
+        </button>
+        <div class="c-viewport">
+          <div class="c-track" id="cTrack">
+
+            <div class="c-card">
+              <img src="resource/imgs/thumb.png" alt="I Know Numbers" class="c-thumb">
+              <div class="c-meta">
+                <span class="c-badge req-badge">필수도서</span>
+                <span class="c-month">4월</span>
+              </div>
+              <p class="c-title">I Know Numbers</p>
+            </div>
+
+            <div class="c-card">
+              <img src="resource/imgs/thumb2.png" alt="My Pets" class="c-thumb">
+              <div class="c-meta">
+                <span class="c-badge rec-badge">추천 도서</span>
+                <span class="c-month">4월</span>
+              </div>
+              <p class="c-title">My Pets</p>
+            </div>
+
+            <div class="c-card">
+              <img src="resource/imgs/thumb.png" alt="I Know Numbers" class="c-thumb">
+              <div class="c-meta">
+                <span class="c-badge req-badge">필수도서</span>
+                <span class="c-month">4월</span>
+              </div>
+              <p class="c-title">I Know Numbers</p>
+            </div>
+
+            <div class="c-card">
+              <img src="resource/imgs/thumb2.png" alt="My Pets" class="c-thumb">
+              <div class="c-meta">
+                <span class="c-badge rec-badge">추천 도서</span>
+                <span class="c-month">4월</span>
+              </div>
+              <p class="c-title">My Pets</p>
+            </div>
+
+            <div class="c-card">
+              <img src="resource/imgs/thumb.png" alt="I Know Numbers" class="c-thumb">
+              <div class="c-meta">
+                <span class="c-badge req-badge">필수도서</span>
+                <span class="c-month">4월</span>
+              </div>
+              <p class="c-title">I Know Numbers</p>
+            </div>
+
+          </div>
+        </div>
+        <button class="c-arrow" id="nextBtn" aria-label="다음">
+          <img src="resource/imgs/forward.png" alt="">
+        </button>
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- ── 지난달 도서 모달 ── -->
+  <div class="modal-overlay" id="lastMonthModal" role="dialog" aria-modal="true" aria-label="지난달 목표 도서">
+    <div class="modal-box lm-modal-box">
+
+      <div class="lm-modal-header">
+        <div class="lm-modal-title-area">
+          <div class="lm-modal-icon-box">
+            <img src="resource/imgs/book.png" alt="" class="lm-modal-icon-img">
+          </div>
+          <h2 class="lm-modal-title">지난달 목표 도서 <span class="lm-modal-count">총 8권</span></h2>
+        </div>
+        <button class="lm-modal-close" id="lmModalClose" aria-label="닫기">&times;</button>
+      </div>
+
+      <div class="lm-modal-content">
+
+        <!-- 필수 도서 -->
+        <div class="lm-section">
+          <div class="lm-section-head">
+            <span class="lm-section-badge lm-teal-badge">필수 도서</span>
+            <span class="lm-section-count">4권</span>
+          </div>
+          <div class="lm-books-grid">
+            <div class="lm-book-card">
+              <div class="lm-book-cover">
+                <img src="resource/imgs/thumb.png" alt="I Know Numbers">
+              </div>
+              <div class="lm-book-info">
+                <p class="lm-book-title">I Know Numbers</p>
+                <p class="lm-book-sub">Math Readers Lv.2</p>
+              </div>
+            </div>
+            <div class="lm-book-card">
+              <div class="lm-book-cover lm-cover-ph"></div>
+              <div class="lm-book-info">
+                <p class="lm-book-title">My Family</p>
+                <p class="lm-book-sub">Sight Words Lv.1</p>
+              </div>
+            </div>
+            <div class="lm-book-card">
+              <div class="lm-book-cover lm-cover-ph"></div>
+              <div class="lm-book-info">
+                <p class="lm-book-title">The Big Ship</p>
+                <p class="lm-book-sub">Phonics Stories</p>
+              </div>
+            </div>
+            <div class="lm-book-card">
+              <div class="lm-book-cover lm-cover-ph"></div>
+              <div class="lm-book-info">
+                <p class="lm-book-title">Run, Dog, Run</p>
+                <p class="lm-book-sub">Decodable Readers</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 추천 도서 -->
+        <div class="lm-section">
+          <div class="lm-section-head">
+            <span class="lm-section-badge lm-green-badge">추천 도서</span>
+            <span class="lm-section-count">4권</span>
+          </div>
+          <div class="lm-books-grid">
+            <div class="lm-book-card">
+              <div class="lm-book-cover">
+                <img src="resource/imgs/thumb2.png" alt="My Pets">
+              </div>
+              <div class="lm-book-info">
+                <p class="lm-book-title">My Pets</p>
+                <p class="lm-book-sub">Animals Around Me</p>
+              </div>
+            </div>
+            <div class="lm-book-card">
+              <div class="lm-book-cover lm-cover-ph"></div>
+              <div class="lm-book-info">
+                <p class="lm-book-title">Sunny Days</p>
+                <p class="lm-book-sub">Science Readers</p>
+              </div>
+            </div>
+            <div class="lm-book-card">
+              <div class="lm-book-cover lm-cover-ph"></div>
+              <div class="lm-book-info">
+                <p class="lm-book-title">Little Chick</p>
+                <p class="lm-book-sub">Phonics Fun</p>
+              </div>
+            </div>
+            <div class="lm-book-card">
+              <div class="lm-book-cover lm-cover-ph"></div>
+              <div class="lm-book-info">
+                <p class="lm-book-title">A to Z Friends</p>
+                <p class="lm-book-sub">Alphabet Series</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ── 같은 레벨 도서 리스트 모달 ── -->
+  <div class="modal-overlay" id="levelBooksModal" role="dialog" aria-modal="true" aria-label="같은 레벨 도서 리스트">
+    <div class="modal-box lm-modal-box">
+
+      <div class="lm-modal-header">
+        <div class="lm-modal-title-area">
+          <div class="lm-modal-icon-box">
+            <img src="resource/imgs/book.png" alt="" class="lm-modal-icon-img">
+          </div>
+          <h2 class="lm-modal-title">같은 레벨 도서 리스트</h2>
+        </div>
+        <button class="lm-modal-close" id="levelBooksModalClose" aria-label="닫기">&times;</button>
+      </div>
+
+      <div class="lm-modal-content">
+        <div class="lm-books-grid">
+          <div class="lm-book-card">
+            <div class="lm-book-cover lm-cover-ph"></div>
+            <div class="lm-book-info">
+              <p class="lm-book-title">I Know Numbers</p>
+              <p class="lm-book-sub">Math Readers Lv.2</p>
+            </div>
+          </div>
+          <div class="lm-book-card">
+            <div class="lm-book-cover lm-cover-ph"></div>
+            <div class="lm-book-info">
+              <p class="lm-book-title">My Pets</p>
+              <p class="lm-book-sub">Animals Around Me</p>
+            </div>
+          </div>
+          <div class="lm-book-card">
+            <div class="lm-book-cover lm-cover-ph"></div>
+            <div class="lm-book-info">
+              <p class="lm-book-title">My Family</p>
+              <p class="lm-book-sub">Sight Words Lv.1</p>
+            </div>
+          </div>
+          <div class="lm-book-card">
+            <div class="lm-book-cover lm-cover-ph"></div>
+            <div class="lm-book-info">
+              <p class="lm-book-title">The Big Ship</p>
+              <p class="lm-book-sub">Phonics Stories</p>
+            </div>
+          </div>
+          <div class="lm-book-card">
+            <div class="lm-book-cover lm-cover-ph"></div>
+            <div class="lm-book-info">
+              <p class="lm-book-title">Run, Dog, Run</p>
+              <p class="lm-book-sub">Decodable Readers</p>
+            </div>
+          </div>
+          <div class="lm-book-card">
+            <div class="lm-book-cover lm-cover-ph"></div>
+            <div class="lm-book-info">
+              <p class="lm-book-title">Sunny Days</p>
+              <p class="lm-book-sub">Science Readers</p>
+            </div>
+          </div>
+          <div class="lm-book-card">
+            <div class="lm-book-cover lm-cover-ph"></div>
+            <div class="lm-book-info">
+              <p class="lm-book-title">Little Chick</p>
+              <p class="lm-book-sub">Phonics Fun</p>
+            </div>
+          </div>
+          <div class="lm-book-card">
+            <div class="lm-book-cover lm-cover-ph"></div>
+            <div class="lm-book-info">
+              <p class="lm-book-title">A to Z Friends</p>
+              <p class="lm-book-sub">Alphabet Series</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ── 명예의 전당 모달 ── -->
+  <div class="modal-overlay" id="hallModal" role="dialog" aria-modal="true" aria-label="명예의 전당">
+    <div class="modal-box">
+
+      <div class="modal-header">
+        <div class="modal-title-area">
+          <img src="resource/imgs/king.png" alt="" class="modal-trophy-icon">
+          <div class="modal-title-text">
+            <span class="modal-subtitle">명예의 전당</span>
+            <h2 class="modal-title">독서왕 리그 확인하기</h2>
+          </div>
+        </div>
+        <button class="modal-close" id="modalClose" aria-label="닫기">&times;</button>
+      </div>
+
+      <div class="modal-sections">
+
+        <!-- 전국 다독왕 TOP 5 -->
+        <div class="league-section">
+          <div class="section-label">
+            <img src="resource/imgs/globe.png" alt="" class="section-icon">
+            <span>전국 다독왕 TOP 5</span>
+          </div>
+          <div class="my-rank-banner blue-banner">
+            <div class="rank-left">
+              <span class="rank-badge-box">23</span>
+              <span class="rank-pill">나의 순위</span>
+              <span class="rank-name">서코니</span>
+            </div>
+            <div class="rank-right">
+              <div class="rank-books"><span class="rank-num">11</span><span class="rank-unit">권</span></div>
+              <span class="rank-campus">파머스영어 강남점</span>
+            </div>
+          </div>
+          <div class="leaderboard">
+            <div class="lb-row">
+              <div class="lb-rank rank-1"><img src="resource/imgs/king.png" alt="1위" class="lb-trophy"></div>
+              <div class="lb-info"><span class="lb-name">김민준</span><span class="lb-campus">파머스영어 서초점</span></div>
+              <div class="lb-count"><span class="lb-num">48</span><span class="lb-unit">권</span></div>
+            </div>
+            <div class="lb-row">
+              <div class="lb-rank rank-2">2</div>
+              <div class="lb-info"><span class="lb-name">이서연</span><span class="lb-campus">파머스영어 분당점</span></div>
+              <div class="lb-count"><span class="lb-num">44</span><span class="lb-unit">권</span></div>
+            </div>
+            <div class="lb-row">
+              <div class="lb-rank rank-3">3</div>
+              <div class="lb-info"><span class="lb-name">박지호</span><span class="lb-campus">파머스영어 목동점</span></div>
+              <div class="lb-count"><span class="lb-num">41</span><span class="lb-unit">권</span></div>
+            </div>
+            <div class="lb-row">
+              <div class="lb-rank rank-n">4</div>
+              <div class="lb-info"><span class="lb-name">최유나</span><span class="lb-campus">파머스영어 마포점</span></div>
+              <div class="lb-count"><span class="lb-num">38</span><span class="lb-unit">권</span></div>
+            </div>
+            <div class="lb-row">
+              <div class="lb-rank rank-n">5</div>
+              <div class="lb-info"><span class="lb-name">정현우</span><span class="lb-campus">파머스영어 노원점</span></div>
+              <div class="lb-count"><span class="lb-num">35</span><span class="lb-unit">권</span></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 우리 학원 TOP 5 -->
+        <div class="league-section">
+          <div class="section-label">
+            <img src="resource/imgs/flash.png" alt="" class="section-icon">
+            <span>우리 학원 TOP 5</span>
+          </div>
+          <div class="my-rank-banner teal-banner">
+            <div class="rank-left">
+              <span class="rank-badge-box">4</span>
+              <span class="rank-pill">나의 순위</span>
+              <span class="rank-name">서코니</span>
+            </div>
+            <div class="rank-right">
+              <div class="rank-books"><span class="rank-num">11</span><span class="rank-unit">권</span></div>
+          
+            </div>
+          </div>
+          <div class="leaderboard">
+            <div class="lb-row">
+              <div class="lb-rank rank-1"><img src="resource/imgs/king.png" alt="1위" class="lb-trophy"></div>
+              <div class="lb-info"><span class="lb-name">강도현</span></div>
+              <div class="lb-count"><span class="lb-num">22</span><span class="lb-unit">권</span></div>
+            </div>
+            <div class="lb-row">
+              <div class="lb-rank rank-2">2</div>
+              <div class="lb-info"><span class="lb-name">윤지아</span></div>
+              <div class="lb-count"><span class="lb-num">18</span><span class="lb-unit">권</span></div>
+            </div>
+            <div class="lb-row">
+              <div class="lb-rank rank-3">3</div>
+              <div class="lb-info"><span class="lb-name">한승민</span></div>
+              <div class="lb-count"><span class="lb-num">14</span><span class="lb-unit">권</span></div>
+            </div>
+            <div class="lb-row lb-row-me">
+              <div class="lb-rank rank-n">4</div>
+              <div class="lb-info"><span class="lb-name">서코니</span></div>
+              <div class="lb-count"><span class="lb-num">11</span><span class="lb-unit">권</span></div>
+            </div>
+            <div class="lb-row">
+              <div class="lb-rank rank-n">5</div>
+              <div class="lb-info"><span class="lb-name">오민서</span></div>
+              <div class="lb-count"><span class="lb-num">9</span><span class="lb-unit">권</span></div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <script src="resource/js/dash.js"></script>
+</body>
+</html>

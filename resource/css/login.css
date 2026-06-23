@@ -1,0 +1,199 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Pretendard', 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+a { text-decoration: none; }
+img { display: block; }
+button { font-family: inherit; cursor: pointer; }
+
+/* ── 전체 배경 ── */
+.login-bg {
+  min-height: 100vh;
+  background: url('../imgs/background.png') center center / cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+/* ── 로그인 카드 ── */
+.login-card {
+  width: 100%;
+  max-width: 400px;
+  background: #eef0f7;
+  border-radius: 20px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.18);
+  padding: 40px 36px 36px;
+}
+
+/* ── 헤더 영역 ── */
+.login-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 32px;
+}
+
+.login-logo {
+  width: 140px;
+  height: auto;
+  object-fit: contain;
+  margin-bottom: 14px;
+}
+
+.login-sub {
+  font-size: 12px;
+  color: #888;
+  font-weight: 400;
+  margin-bottom: 4px;
+  letter-spacing: -0.01em;
+}
+
+.login-title {
+  font-size: 18px;
+  font-weight: 800;
+  color: #1a1a1a;
+  letter-spacing: -0.02em;
+}
+
+/* ── 폼 영역 ── */
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* ── 입력 필드 ── */
+.input-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.input-icon {
+  position: absolute;
+  left: 14px;
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
+  pointer-events: none;
+}
+
+.login-input {
+  width: 100%;
+  height: 50px;
+  padding: 0 16px 0 42px;
+  background: #f0f1f5;
+  border: none;
+  border-radius: 10px;
+  font-family: inherit;
+  font-size: 14px;
+  color: #1a1a1a;
+  outline: none;
+  transition: background 0.15s;
+}
+
+.login-input::placeholder {
+  color: #b0b3bf;
+  font-size: 13.5px;
+}
+
+.login-input:focus {
+  background: #e8eaf2;
+}
+
+/* ── 아이디 저장 ── */
+.save-id-row {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: -2px;
+}
+
+.save-id-label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.save-id-checkbox {
+  width: 15px;
+  height: 15px;
+  border-radius: 3px;
+  accent-color: #3f5be8;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.save-id-text {
+  font-size: 13px;
+  color: #555;
+  font-weight: 500;
+}
+
+/* ── 로그인 버튼 ── */
+.login-btn {
+  width: 100%;
+  height: 52px;
+  background: #3f5be8;
+  color: #ffffff;
+  border: none;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  margin-top: 4px;
+  transition: background 0.15s, transform 0.1s;
+}
+
+.login-btn:hover {
+  background: #2f4ad0;
+}
+
+.login-btn:active {
+  transform: scale(0.98);
+}
+
+/* ── 하단 링크 ── */
+.login-footer-links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  margin-top: 4px;
+}
+
+.footer-link {
+  font-size: 12.5px;
+  color: #7a85b8;
+  font-weight: 500;
+  transition: color 0.15s;
+}
+
+.footer-link:hover {
+  color: #3f5be8;
+}
+
+.footer-divider {
+  font-size: 12px;
+  color: #b0b3bf;
+}
+
+/* ── 반응형 ── */
+@media (max-width: 480px) {
+  .login-card {
+    padding: 32px 24px 28px;
+  }
+
+  .login-logo {
+    width: 120px;
+  }
+}

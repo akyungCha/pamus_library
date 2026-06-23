@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>파머스영어 라이브러리 - 로그인</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css">
+  <link rel="stylesheet" href="resource/css/login.css">
+</head>
+<body>
+
+  <div class="login-bg">
+    <div class="login-card">
+
+      <!-- 헤더: 로고 + 타이틀 -->
+      <div class="login-header">
+        <img src="resource/imgs/logo_login.svg" alt="파머스 영어도서관 로고" class="login-logo">
+        <p class="login-sub">더 넓은 세상으로의 한 걸음</p>
+        <p class="login-title">파머스 영어도서관</p>
+      </div>
+
+      <!-- 입력 영역 -->
+      <div class="login-form">
+
+        <!-- 아이디 -->
+        <div class="input-wrap">
+          <img src="resource/imgs/login_ID.png" alt="" class="input-icon">
+          <input type="text" placeholder="아이디를 입력해주세요." class="login-input" autocomplete="username">
+        </div>
+
+        <!-- 비밀번호 -->
+        <div class="input-wrap">
+          <img src="resource/imgs/lock.png" alt="" class="input-icon">
+          <input type="password" placeholder="비밀번호를 입력해주세요." class="login-input" autocomplete="current-password">
+        </div>
+
+        <!-- 아이디 저장 -->
+        <div class="save-id-row">
+          <label class="save-id-label">
+            <input type="checkbox" class="save-id-checkbox">
+            <span class="save-id-text">아이디 저장</span>
+          </label>
+        </div>
+
+        <!-- 로그인 버튼 -->
+        <button class="login-btn" onclick="location.href='index.html'">로그인</button>
+
+        <!-- 하단 링크 -->
+        <div class="login-footer-links">
+          <a href="#" class="footer-link">아이디 찾기</a>
+          <span class="footer-divider">｜</span>
+          <a href="#" class="footer-link">비밀번호 찾기</a>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
