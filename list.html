@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>파머스영어 라이브러리 - 도서 목록</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css">
+  <link rel="stylesheet" href="resource/css/style_dash.css">
+  <link rel="stylesheet" href="resource/css/list.css">
+</head>
+<body>
+
+  <!-- ── 헤더 ── -->
+  <header class="header">
+    <div class="header-left">
+      <img src="resource/imgs/logo.png" alt="Library" class="logo">
+    </div>
+    <div class="header-right">
+      <span class="username">서코니</span>
+      <button class="icon-btn" aria-label="사용자">
+        <img src="resource/imgs/person.png" alt="">
+      </button>
+      <button class="icon-btn" aria-label="로그아웃">
+        <img src="resource/imgs/power.png" alt="">
+      </button>
+    </div>
+  </header>
+
+  <!-- ── 본문 ── -->
+  <main class="page-main">
+
+    <!-- 탭 내비게이션 -->
+    <nav class="tabs-row" aria-label="메뉴">
+      <div class="tabs-pill">
+        <button class="tab-btn" data-tab="mybook">My Book</button>
+        <button class="tab-btn active" data-tab="booklist">도서 목록</button>
+        <button class="tab-btn" data-tab="readbooks">읽은 도서</button>
+      </div>
+    </nav>
+
+    <!-- ── 도서 목록 섹션 ── -->
+    <div class="book-list-scroll">
+      <section class="book-list-section" aria-label="도서 목록">
+
+        <!-- 1뎁스: 분류 탭 (버튼은 renderCategoryTabs 가 생성) -->
+        <nav class="category-tabs" id="categoryTabs" aria-label="도서 분류"></nav>
+
+        <!-- 2뎁스: 단계 필 (버튼은 renderLevelPills 가 생성, 전체 탭에서는 숨김) -->
+        <div class="level-pills-row" id="levelPillsRow">
+          <div class="level-pills" id="levelPills"></div>
+        </div>
+
+        <!-- 목록 헤더: 총 권수 + 필독 도서만 + 정렬 -->
+        <div class="list-header-row">
+          <p class="list-total" id="listTotal">총 <strong>0</strong>권</p>
+          <div class="list-controls">
+            <label class="required-check">
+              <input type="checkbox" id="requiredOnlyCheckbox">
+              필독 도서만
+            </label>
+            <select class="sort-select" id="sortSelect">
+              <option value="lexile-desc">렉사일 높은순</option>
+              <option value="lexile-asc">렉사일 낮은순</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- 도서 카드 그리드 (renderList 가 채움) -->
+        <div class="book-grid" id="bookGrid"></div>
+
+        <!-- 페이지네이션 (renderPagination 이 채움) -->
+        <nav class="pagination" id="pagination" aria-label="페이지 이동"></nav>
+
+      </section>
+    </div>
+
+  </main>
+
+  <script src="resource/js/list-data.js"></script>
+  <script src="resource/js/list.js"></script>
+</body>
+</html>
